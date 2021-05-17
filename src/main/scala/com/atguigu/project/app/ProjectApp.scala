@@ -72,13 +72,19 @@ object ProjectApp {
       *
       */
 
-      CategorySessionTopApp.statCategorySessionTop10_4(sc,categoryTop10,userVisitActionRDD)
+//      CategorySessionTopApp.statCategorySessionTop10_4(sc,categoryTop10,userVisitActionRDD)
 
 
 
 
+    /**
+      * @note  The third requirement : 页面单跳转化率统计
+      *        @note What is single page jump rate?
+      *              一个用户在一次 Session 过程中访问的页面路径 3,5,7,9,10,21，那么页面 3 跳到页面 5 叫一次单跳，
+      *              7-9 也叫一次单跳，那么单跳转化率就是要统计页面点击的概率
+      */
 
-
+    PageConversion.statPageConversionRate(sc, userVisitActionRDD, "1,2,3,4,5,6,7,8,9")
 
     /**
       * @note 关闭项目(sc)
